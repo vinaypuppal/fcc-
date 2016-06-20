@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Show the Local Weather</title>
+	<meta description="FreeCodeCamp: Show the Local Weather" />
+	<!-- FACEBOOK -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="VinayPuppal">
+	<meta property="og:url" content="https://www.vinaypuppal.com">
+	<meta property="og:image" content="https://res.cloudinary.com/vinaypuppal/image/upload/v1465257273/fcc/portifolio-ui.png">
+	<meta property="og:site_name" content="VinayPuppal">
+	<meta property="og:description" content="Portfolio Page: VinayPuppal">
+	<meta property="fb:app_id" content="1110213405717341">
+	<!-- TWITTER -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@vinaypuppal">
+	<meta name="twitter:title" content="VinayPuppal">
+	<meta name="twitter:description" content="Portfolio Page: VinayPuppal">
+	<meta name="twitter:image:src" content="https://res.cloudinary.com/vinaypuppal/image/upload/v1465257273/fcc/portifolio-ui.png">
+	
+	<!-- favicons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png?v=7kkBEKw5XN">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png?v=7kkBEKw5XN">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png?v=7kkBEKw5XN">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png?v=7kkBEKw5XN">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png?v=7kkBEKw5XN">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png?v=7kkBEKw5XN">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png?v=7kkBEKw5XN">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png?v=7kkBEKw5XN">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png?v=7kkBEKw5XN">
+	<link rel="icon" type="image/png" href="favicons/favicon-32x32.png?v=7kkBEKw5XN" sizes="32x32">
+	<link rel="icon" type="image/png" href="favicons/android-chrome-192x192.png?v=7kkBEKw5XN" sizes="192x192">
+	<link rel="icon" type="image/png" href="favicons/favicon-96x96.png?v=7kkBEKw5XN" sizes="96x96">
+	<link rel="icon" type="image/png" href="favicons/favicon-16x16.png?v=7kkBEKw5XN" sizes="16x16">
+	<link rel="manifest" href="favicons/manifest.json?v=7kkBEKw5XN">
+	<link rel="mask-icon" href="favicons/safari-pinned-tab.svg?v=7kkBEKw5XN" color="#82949d">
+	<link rel="shortcut icon" href="favicons/favicon.ico?v=7kkBEKw5XN">
+	<meta name="apple-mobile-web-app-title" content="VinayPuppal">
+	<meta name="application-name" content="VinayPuppal">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="favicons/mstile-144x144.png?v=7kkBEKw5XN">
+	<meta name="msapplication-config" content="favicons/browserconfig.xml?v=7kkBEKw5XN">
+	<meta name="theme-color" content="#82949d">
+
+	<!-- css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://erikflowers.github.io/weather-icons/css/weather-icons.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,600italic">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,900">
+	<link rel="stylesheet" href="https://weathericons.io/css/weather-icons.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="container">
+	  <header>
+	    <h1>Local Weather</h1>
+	  </header>
+	  <div class="current-time">
+	    <div class="hrs">00</div>
+	    <div class="colon-1">:</div>
+	    <div class="min">00</div>
+	    <div class="colon-2">:</div>
+	    <div class="sec">00</div>
+	  </div>
+	  <div class="current-day">Day Month Date Year</div>
+	  <div class="city">Loading Location...</div>
+	  <div class="main-content">
+	    <div class="buttons">
+	      <div class="btn"><a id='toggle-temp' href="#">Show In Celsius</a></div>
+	      <div class="btn"><a id='refresh' href="#">Refresh</a></div>
+	    </div>
+	    <div class="forecast">
+	      <div class="current-weather">
+	        <div class="title">Right Now</div>
+	        <div class="weather">
+	          <div class="icon"></div>
+	          <div class="info">
+	            <div class="summary"></div>
+	            <div class="temperature">
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="hourly-weather">
+	        <div class="title">Next 24 Hours</div>
+	        <div class="weather">
+	          <div class="icon"></div>
+	          <div class="info">
+	            <div class="summary"></div>
+	            <div class="temperature">
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="weeks-weather">
+	        <div class="title">Next 7 Days</div>
+	        <div class="weather">
+	          <div class="icon"></div>
+	          <div class="info">
+	            <div class="summary"></div>
+	            <div class="temperature">
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	<!--     <div class="last-updated">Last Updated At <span class="value"></span></div> -->
+	  </div>
+	  <div class="loading">
+	    <i class='fa fa-spinner fa-spin'></i>
+	  </div>
+	  <footer>
+	    <p>API Used <a href="https://forecast.io">Forecast.io</a></p>
+	    <p>Made With <i class='wi wi-fire'></i> By VinayPuppal</p>
+	  </footer>
+	</div>
+	  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	  <script src="js/index.js"></script>
+</body>
+</html>
